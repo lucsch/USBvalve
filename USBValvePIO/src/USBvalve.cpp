@@ -1,9 +1,9 @@
 /*********************************************************************
 
   USBvalve
-  
+
   written by Cesare Pizzi
-  This project extensively reuse code done by Adafruit and TinyUSB. 
+  This project extensively reuse code done by Adafruit and TinyUSB.
   Please support them!
 
 *********************************************************************/
@@ -19,32 +19,9 @@
   any redistribution
 *********************************************************************/
 
-// Uncomment the following to compile for the RP2040 based TFT round display
-// https://www.raspberrypi.com/news/how-to-build-your-own-raspberry-pi-watch/
-//#define PIWATCH
 
-#include "Arduino.h"
-#include <pio_usb.h>
-#include "Adafruit_TinyUSB.h"
-#include <XxHash_arduino.h>
-#include <pico/stdlib.h>
 
-#if defined(PIWATCH)
-
-#include <Arduino_GFX_Library.h>
-#include "background.h"
-
-#else
-
-#include <SPI.h>
-#include <Wire.h>
-#include <Adafruit_GFX.h>
-#include <Adafruit_SSD1306.h>
-
-// LED Pin. If solid GREEN everything is OK, otherwise it will be put OFF
-#define LED_PIN   25
-
-#endif
+#include "USBvalve.h"
 
 //
 // BADUSB detector section
@@ -192,7 +169,7 @@ void setup() {
 
   // Check consistency of RAM FS
   // Add 11 bytes to skip the DISK_LABEL from the hashing
-  // The startup of the USB has been moved before initialization of the 
+  // The startup of the USB has been moved before initialization of the
   // screen because sometimes it inserts some delay preventing
   // proper initialization of the mass device
   uint computed_hash;
@@ -215,7 +192,7 @@ void setup() {
 #else
   display.begin(SSD1306_SWITCHCAPVCC, I2C_ADDRESS);
 #endif
-#endif 
+#endif
 
 #if defined(PIWATCH)
   gfx->setTextSize(1);
