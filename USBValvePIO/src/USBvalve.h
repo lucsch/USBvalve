@@ -27,10 +27,10 @@
 
 #endif
 
-void msc_flush_callback(void);
+void msc_flush_callback();
 int32_t msc_read_callback(uint32_t lba, void* buffer, uint32_t bufsize);
 int32_t msc_write_callback(uint32_t lba, uint8_t* buffer, uint32_t bufsize);
-void cls(void);
+void cls();
 void printout(const char *str);
 void swreset();
 void hexDump(unsigned char* data, size_t size);
