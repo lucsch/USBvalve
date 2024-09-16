@@ -52,3 +52,7 @@ Mkfile.old
 dkms.conf
 
 USBvalve_out
+
+# IDE
+USBValvePIO/.pio
+USBValvePIO/.idea
