@@ -21,8 +21,8 @@
 #include <SPI.h>
 #include <Wire.h>
 #include <Arduino.h>
-#include <Adafruit_GFX.h>
-#include <Adafruit_SSD1306.h>
+#include "Adafruit_GFX.h"
+#include "Adafruit_SSD1306.h"
 
 void testdrawline();      // Draw many lines
 void testdrawrect();      // Draw rectangles (outlines)
@@ -82,6 +82,8 @@ void setup() {
         Serial.println(F("SSD1306 allocation failed"));
         for(;;); // Don't proceed, loop forever
     }
+
+    Serial.println(F("SSD1306 initialized"));
 
     // Show initial display buffer contents on the screen --
     // the library initializes this with an Adafruit splash screen.
