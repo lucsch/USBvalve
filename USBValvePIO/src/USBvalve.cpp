@@ -61,7 +61,7 @@ Arduino_GFX *gfx = new Arduino_GC9A01(bus, GFX_RST, 1 /* rotation */, true /* IP
 #define I2C_ADDRESS 0x3C  // 0X3C+SA0 - 0x3C or 0x3D
 #define RST_PIN -1        // Define proper RST_PIN if required.
 #define OLED_WIDTH  128
-#define OLED_HEIGHT 32    // 64 or 32 depending on the OLED
+#define OLED_HEIGHT 64    // 64 or 32 depending on the OLED
 
 Adafruit_SSD1306 display(OLED_WIDTH, OLED_HEIGHT, &Wire, RST_PIN);
 
